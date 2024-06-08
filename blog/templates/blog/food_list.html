@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Продукти харчування</h1>
+    <ul>
+        {% for food_name, food_desc in food_products.items %}
+            <li>
+                <a href="{% url 'blog:food_shop' food_desc.id %}">{{ food_name }}</a> | id: {{ food_desc.id }} description: {{ food_desc.description }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
